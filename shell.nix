@@ -14,6 +14,6 @@ pkgs.mkShell {
     echo "HEXploit development environment"
     echo "Node: $(node --version)"
     echo "npm:  $(npm --version)"
-    echo "Execute ./start.sh para iniciar o projeto."
+    echo "Execute ./start.sh"
   '';
 }

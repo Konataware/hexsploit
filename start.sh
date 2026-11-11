@@ -19,5 +19,4 @@ if [[ ! -d node_modules ]]; then
 	npm install
 fi
 
-echo "Iniciando HEXploit..."
-exec npm run dev -- --host 0.0.0.0
+echo "Run: node scripts/serve.js or start"

@@ -1,0 +1,67 @@
+/* HEXploit — estilo base e telas. Tema: pergaminho/masmorra, com fonte monoespaçada. */
+:root {
+  --bg: #1b1410;
+  --bg2: #261c15;
+  --panel: #2f2318;
+  --line: #5a4228;
+  --ink: #f2e4c8;
+  --dim: #a8967a;
+  --gold: #e8b64a;
+  --red: #d9534f;
+  --green: #6fbf73;
+  --blue: #5aa9e6;
+  --violet: #b48ae8;
+  --mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font-family: var(--mono); font-size: 14px; }
+body { background: radial-gradient(1200px 600px at 50% -10%, #3a2a1c 0%, var(--bg) 60%); }
+#app { min-height: 100%; }
+b { color: #fff3d6; }
+.dim { color: var(--dim); }
+.small { font-size: 12px; }
+code { background: #00000055; padding: 1px 5px; border-radius: 3px; }
+.hidden { display: none !important; }
+
+button { font-family: inherit; font-size: inherit; color: var(--ink); cursor: pointer; }
+button:disabled { opacity: .4; cursor: not-allowed; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.act { background: linear-gradient(#4a3522, #3a2a1a); border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; transition: transform .08s, border-color .15s; }
+.act:hover:not(:disabled) { border-color: var(--gold); transform: translateY(-1px); }
+.act small { color: var(--dim); margin-left: 4px; }
+.act.primary { background: linear-gradient(#b8872b, #8a6320); border-color: #e8b64a; color: #1b1410; font-weight: 700; }
+.act.primary small { color: #3a2a10; }
+.act.big { padding: 14px 28px; font-size: 18px; }
+.ghost { background: transparent; border: 1px solid transparent; color: var(--dim); padding: 6px 10px; border-radius: 6px; }
+.ghost:hover { color: var(--ink); border-color: var(--line); }
+input, select { font-family: inherit; font-size: inherit; background: #120d09; color: var(--ink); border: 1px solid var(--line); border-radius: 5px; padding: 7px 9px; min-width: 0; }
+
+/* telas */
+.screen { max-width: 760px; margin: 0 auto; padding: 32px 18px 48px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.screen h2 { margin: 6px 0 0; font-size: 22px; color: var(--gold); }
+.logo { color: var(--gold); font-size: clamp(14px, 4.4vw, 26px); line-height: 1.15; margin: 20px 0 0; text-shadow: 0 0 18px #e8b64a55; }
+.tag { color: var(--dim); margin: 0; }
+.menu { display: flex; flex-direction: column; gap: 10px; align-items: center; margin: 18px 0; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; width: 100%; text-align: left; }
+.prose p { margin: 0 0 10px; line-height: 1.55; }
+.prose p:last-child { margin: 0; }
+.story { font-style: italic; color: #e6d4b0; line-height: 1.5; max-width: 560px; }
+.row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.stagehead { color: var(--dim); letter-spacing: .1em; text-transform: uppercase; font-size: 12px; }
+.bigsprite { font-size: 84px; line-height: 1; filter: drop-shadow(0 6px 10px #000a); }
+.tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; width: 100%; }
+.toolcard { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 12px; text-align: center; transition: transform .12s, border-color .15s; }
+.toolcard:hover { border-color: var(--gold); transform: translateY(-3px); }
+.ticon { font-size: 38px; }
+.tname { font-size: 16px; font-weight: 700; color: var(--gold); margin-top: 4px; }
+.tprof { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); margin: 2px 0 8px; }
+.tdesc { font-size: 12.5px; line-height: 1.4; }
+
+table.score { border-collapse: collapse; width: 100%; font-size: 13px; }
+table.score th, table.score td { border-bottom: 1px solid var(--line); padding: 7px 6px; text-align: center; }
+table.score th { color: var(--dim); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
+table.score td:first-child, table.score th:first-child { text-align: left; }
+.final { text-align: center; display: flex; flex-direction: column; gap: 6px; }
+.final .big { font-size: 22px; color: var(--gold); margin-top: 4px; }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
